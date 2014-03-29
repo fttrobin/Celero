@@ -8,7 +8,7 @@
  
 namespace celero
 {
-	class BenchmarkInfo;
+	class IBenchmarkInfo;
 
 	///
 	/// \namespace print
@@ -19,10 +19,10 @@ namespace celero
 	{
 		void StageBanner(const std::string& x);
 		void GreenBar(const std::string& x);
-		void Run(std::shared_ptr<BenchmarkInfo> x);
-		void Auto(std::shared_ptr<BenchmarkInfo> x);
-		void Done(std::shared_ptr<BenchmarkInfo> x);
-		void Baseline(std::shared_ptr<BenchmarkInfo> x);
+		void Run(std::shared_ptr<IBenchmarkInfo> x);
+		void Auto(std::shared_ptr<IBenchmarkInfo> x);
+		void Done(std::shared_ptr<IBenchmarkInfo> x);
+		void Baseline(std::shared_ptr<IBenchmarkInfo> x);
 	}
 }
 

@@ -8,7 +8,7 @@
 
 namespace celero
 {
-	class BenchmarkInfo;
+	class IBenchmarkInfo;
 
 	///
 	/// \class JUnit
@@ -33,7 +33,7 @@ namespace celero
 			///
 			///
 			///
-			void add(celero::BenchmarkInfo x);
+			void add(std::shared_ptr<celero::IBenchmarkInfo> x);
 
 			///
 			///

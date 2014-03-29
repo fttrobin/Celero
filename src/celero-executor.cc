@@ -12,7 +12,7 @@
 
 using namespace celero;
 
-void executor::Execute(std::shared_ptr<BenchmarkInfo> x)
+void executor::Execute(std::shared_ptr<IBenchmarkInfo> x)
 {
 	// Define a small internal function object to use to uniformly execute the tests.
 	auto testRunner = [x](const size_t problemSetValueIndex)
@@ -48,7 +48,7 @@ void executor::Execute(std::shared_ptr<BenchmarkInfo> x)
 	}
 
 	ResultTable::Instance().add(x->getGroupName(), x->getTestName(), temp->getProblemSetValue(problemSetIndex), x->getUsPerOp());
-	JUnit::Instance().add(*x);
+	JUnit::Instance().add(x);
 }
 
 void executor::RunAll()
@@ -62,14 +62,14 @@ void executor::RunAll()
 
 		// Reset all baseline data.
 		celero::TestVector::Instance().forEachBaseline(
-			[](std::shared_ptr<BenchmarkInfo> info)
+			[](std::shared_ptr<IBenchmarkInfo> info)
 		{
 			info->reset();
 		});
 
 		// Reset all benchmark data.
 		celero::TestVector::Instance().forEachTest(
-			[](std::shared_ptr<BenchmarkInfo> info)
+			[](std::shared_ptr<IBenchmarkInfo> info)
 		{
 			info->reset();
 		});
@@ -87,7 +87,7 @@ bool executor::RunAllBaselines()
 
 	// Run through all the tests in ascending order.
 	celero::TestVector::Instance().forEachBaseline(
-		[&moreProblemSetsLeft](std::shared_ptr<BenchmarkInfo> info)
+		[&moreProblemSetsLeft](std::shared_ptr<IBenchmarkInfo> info)
 	{
 		if(info->getProblemSetSizeIndex() < info->getProblemSetSize() || info->getProblemSetSizeIndex() == 0)
 		{
@@ -117,7 +117,7 @@ bool executor::RunAllTests()
 
 	// Run through all the tests in ascending order.
 	celero::TestVector::Instance().forEachTest(
-		[&moreProblemSetsLeft](std::shared_ptr<BenchmarkInfo> info)
+		[&moreProblemSetsLeft](std::shared_ptr<IBenchmarkInfo> info)
 	{
 		if(info->getProblemSetSizeIndex() < info->getProblemSetSize() || info->getProblemSetSizeIndex() == 0)
 		{
@@ -154,7 +154,7 @@ void executor::RunGroup(const std::string& x)
 
 			// Run through all the tests in ascending order.
 			celero::TestVector::Instance().forEachTest(
-				[&moreProblemSetsLeft, &x](std::shared_ptr<BenchmarkInfo> info)
+				[&moreProblemSetsLeft, &x](std::shared_ptr<IBenchmarkInfo> info)
 			{
 				if(info != nullptr && info->getGroupName() == x)
 				{
@@ -178,14 +178,14 @@ void executor::RunGroup(const std::string& x)
 
 			// Reset all baseline data.
 			celero::TestVector::Instance().forEachBaseline(
-				[](std::shared_ptr<BenchmarkInfo> info)
+				[](std::shared_ptr<IBenchmarkInfo> info)
 			{
 				info->reset();
 			});
 
 			// Reset all benchmark data.
 			celero::TestVector::Instance().forEachTest(
-				[](std::shared_ptr<BenchmarkInfo> info)
+				[](std::shared_ptr<IBenchmarkInfo> info)
 			{
 				info->reset();
 			});

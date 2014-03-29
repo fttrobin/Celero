@@ -26,7 +26,7 @@ class celero::JUnit::Impl
 		}
 
 		// Store the test case size, measured baseline, objective baseline, and total run time in seconds.
-		typedef std::map<std::string, std::vector<BenchmarkInfo>> ResultMap;
+		typedef std::map<std::string, std::vector<std::shared_ptr<IBenchmarkInfo>>> ResultMap;
 
 		std::ofstream os;
 		ResultMap results;
@@ -60,10 +60,10 @@ void JUnit::setFileName(const std::string& x)
 	}
 }
 
-void JUnit::add(celero::BenchmarkInfo x)
+void JUnit::add(std::shared_ptr<celero::IBenchmarkInfo> x)
 {
-	x.saveBaselineMeasurement();
-	this->pimpl->results[x.getGroupName()].push_back(x);
+	x->saveBaselineMeasurement();
+	this->pimpl->results[x->getGroupName()].push_back(x);
 }
 
 void JUnit::save()
@@ -83,12 +83,12 @@ void JUnit::save()
 
 			for(auto j : runs)
 			{
-				if(j.getBaselineMeasurement() > 1)
+				if(j->getBaselineMeasurement() > 1)
 				{
 					testSuiteFailures++;
 				}
 
-				testSuiteTime += j.getRunTime();
+				testSuiteTime += j->getRunTime();
 			}
 
 			*os << "<testsuite errors=\"0\" ";
@@ -100,18 +100,18 @@ void JUnit::save()
 			for(auto j : runs)
 			{
 				*os << "\t<testcase ";
-				*os << "time=\"" << celero::timer::ConvertSystemTime(j.getRunTime()) << "\" ";
-				*os << "name=\"" << j.getTestName() << "#" << j.getProblemSetSize() << "\"";
+				*os << "time=\"" << celero::timer::ConvertSystemTime(j->getRunTime()) << "\" ";
+				*os << "name=\"" << j->getTestName() << "#" << j->getProblemSetSize() << "\"";
 								
 				// Compare measured to objective
-				if(j.getBaselineMeasurement() > j.getBaselineTarget())
+				if(j->getBaselineMeasurement() > j->getBaselineTarget())
 				{
 					// Failure
 					*os << ">\n";
 
 					*os << "\t\t<failure ";
 					*os << "type=\"Performance objective not met.\" ";
-					*os << "message=\"Measurement of " << j.getBaselineMeasurement() << " exceeds objective baseline of " << j.getBaselineTarget() << "\" ";
+					*os << "message=\"Measurement of " << j->getBaselineMeasurement() << " exceeds objective baseline of " << j->getBaselineTarget() << "\" ";
 					*os << "/>\n";
 
 					*os << "\t</testcase>\n";

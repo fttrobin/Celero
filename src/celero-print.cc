@@ -30,14 +30,14 @@ void print::GreenBar(const std::string& x)
 	std::cout << x << std::endl;
 }
 
-void print::Run(std::shared_ptr<BenchmarkInfo> x)
+void print::Run(std::shared_ptr<IBenchmarkInfo> x)
 {
 	celero::console::SetConsoleColor(celero::console::ConsoleColor_Default);
 	std::cout << "[ RUN      ] ";
 	std::cout << x->get() << std::endl;
 }
 
-void print::Auto(std::shared_ptr<BenchmarkInfo> x)
+void print::Auto(std::shared_ptr<IBenchmarkInfo> x)
 {
 	celero::console::SetConsoleColor(celero::console::ConsoleColor_Yellow);
 	std::cout << "[   AUTO   ] ";
@@ -45,7 +45,7 @@ void print::Auto(std::shared_ptr<BenchmarkInfo> x)
 	std::cout << x->get() << std::endl;
 }
 
-void print::Done(std::shared_ptr<BenchmarkInfo> x)
+void print::Done(std::shared_ptr<IBenchmarkInfo> x)
 {
 	celero::console::SetConsoleColor(celero::console::ConsoleColor_Default);
 	std::cout << "[     DONE ] ";
@@ -54,7 +54,7 @@ void print::Done(std::shared_ptr<BenchmarkInfo> x)
 	std::cout << " [" << x->getOps() << " calls in " << celero::timer::ConvertSystemTime(x->getRunTime()) << " sec]" << " [" << x->getUsPerOp() << " us/call]" << " [" << x->getOpsPerSecond() << " calls/sec]" << std::endl;
 }
 
-void print::Baseline(std::shared_ptr<BenchmarkInfo> x)
+void print::Baseline(std::shared_ptr<IBenchmarkInfo> x)
 {	
 	auto baselineGroupName = x->getGroupName();
 	if(baselineGroupName.empty() == false)

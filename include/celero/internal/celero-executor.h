@@ -8,11 +8,11 @@
  
 namespace celero
 {
-	class BenchmarkInfo;
+	class IBenchmarkInfo;
 
 	namespace executor
 	{
-		void Execute(std::shared_ptr<BenchmarkInfo> x);
+		void Execute(std::shared_ptr<IBenchmarkInfo> x);
 
 		void RunAll();
 		bool RunAllBaselines();
