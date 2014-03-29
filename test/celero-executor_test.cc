@@ -42,8 +42,31 @@ protected:
 
 TEST_F(CeleroExecutorShould, succeed)
 {
-//    EXPECT_CALL(*benchmarkInfoMock, getFactory())
-//        .WillOnce(::testing::Return(factoryMock));
+    EXPECT_CALL(*benchmarkInfoMock, getFactory())
+        .WillRepeatedly(::testing::Return(factoryMock));
+    EXPECT_CALL(*factoryMock, Create())
+        .WillRepeatedly(::testing::Return(benchmarkMock));
+    EXPECT_CALL(*benchmarkInfoMock, getProblemSetSizeIndex())
+        .WillOnce(::testing::Return(1));
+    EXPECT_CALL(*benchmarkInfoMock, getSamples())
+        .WillRepeatedly(::testing::Return(1));
+    EXPECT_CALL(*benchmarkInfoMock, getOps())
+        .WillOnce(::testing::Return(1));
+    EXPECT_CALL(*benchmarkMock, Run(1, 1))
+        .WillOnce(::testing::Return(std::make_pair(1, 1)));
+    EXPECT_CALL(*benchmarkInfoMock, setRunTime(1));
+    EXPECT_CALL(*benchmarkInfoMock, incrementTotalRunTime(1));
+    EXPECT_CALL(*benchmarkInfoMock, getGroupName())
+        .WillRepeatedly(::testing::Return("test"));
+    EXPECT_CALL(*benchmarkInfoMock, getTestName())
+        .WillOnce(::testing::Return("test"));
+    EXPECT_CALL(*benchmarkMock, getProblemSetValue(1))
+        .WillOnce(::testing::Return(1));
+    EXPECT_CALL(*benchmarkInfoMock, getUsPerOp())
+        .WillOnce(::testing::Return(1.0));
+    EXPECT_CALL(*benchmarkInfoMock, saveBaselineMeasurement());
+    
+    celero::executor::Execute(benchmarkInfoMock);
 }
 
 }  // namespace test

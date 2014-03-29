@@ -29,6 +29,7 @@ file(GLOB_RECURSE CELERO_LIBRARY_HEADERS
 )
 set(CELERO_LIBRARY_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/celero-benchmark_info.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/celero-console.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/celero.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/celero-executor.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/celero-junit.cc

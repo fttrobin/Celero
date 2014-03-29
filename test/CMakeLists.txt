@@ -7,6 +7,7 @@ file(GLOB CELERO_TESTS_SOURCES
 add_executable(celero-tests ${CELERO_TESTS_SOURCES})
 
 target_link_libraries(celero-tests
+    celero
     gtest
     gtest_main
     gmock
