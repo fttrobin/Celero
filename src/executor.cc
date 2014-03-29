@@ -1,6 +1,6 @@
 #include <celero/celero.h>
 #include <celero/Console.h>
-#include <celero/BenchmarkInfo.h>
+#include "celero/celero-benchmark_info.h"
 #include <celero/TestVector.h>
 #include "celero/celero-utilities.h"
 #include <celero/Executor.h>

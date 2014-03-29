@@ -1,6 +1,6 @@
 #include <celero/JUnit.h>
 #include "celero/celero-utilities.h"
-#include <celero/BenchmarkInfo.h>
+#include "celero/celero-benchmark_info.h"
 #include <celero/Timer.h>
 
 #include <assert.h>

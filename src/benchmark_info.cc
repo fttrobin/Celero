@@ -1,4 +1,4 @@
-#include <celero/BenchmarkInfo.h>
+#include "celero/celero-benchmark_info.h"
 #include "celero/celero-test_fixture.h"
 #include <celero/Factory.h>
 #include <celero/TestVector.h>
