@@ -3,7 +3,7 @@
 #include "celero/celero-benchmark_info.h"
 #include "celero/internal/celero-test_vector.h"
 #include "celero/celero-utilities.h"
-#include <celero/Timer.h>
+#include "celero/internal/celero-timer.h"
 
 #include <iostream>
 #include <chrono>

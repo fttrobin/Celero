@@ -1,4 +1,4 @@
-#include <celero/Timer.h>
+#include "celero/internal/celero-timer.h"
 
 #ifdef WIN32
 	#include <Windows.h>

@@ -6,7 +6,7 @@
 #include <cstddef>
 #include <stdint.h>
 
-#include <celero/Timer.h>
+#include "celero/internal/celero-timer.h"
 #include "celero/internal/celero-export.h"
 
 #include <vector>
