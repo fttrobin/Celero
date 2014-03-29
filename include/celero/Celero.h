@@ -43,7 +43,7 @@
 #include <celero/BenchmarkInfo.h>
 #include <celero/TestFixture.h>
 #include <celero/GenericFactory.h>
-#include <celero/Utilities.h>
+#include "celero/celero-utilities.h"
 
 namespace celero
 {

@@ -2,7 +2,7 @@
 #include <celero/TestFixture.h>
 #include <celero/Factory.h>
 #include <celero/TestVector.h>
-#include <celero/Utilities.h>
+#include "celero/celero-utilities.h"
 
 #include <algorithm>
 

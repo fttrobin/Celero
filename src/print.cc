@@ -2,7 +2,7 @@
 #include <celero/Console.h>
 #include <celero/BenchmarkInfo.h>
 #include <celero/TestVector.h>
-#include <celero/Utilities.h>
+#include "celero/celero-utilities.h"
 #include <celero/Timer.h>
 
 #include <iostream>
