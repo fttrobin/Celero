@@ -3,7 +3,7 @@
 
 // www.helleboreconsulting.com
 
-#include "celero/internal/pimpl.h"
+#include "celero/internal/celero-pimpl.h"
 #include <string>
 
 namespace celero

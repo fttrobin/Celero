@@ -4,7 +4,7 @@
 #include <string>
 
 #include <celero/Export.h>
-#include "celero/internal/pimpl.h"
+#include "celero/internal/celero-pimpl.h"
 
 namespace celero
 {

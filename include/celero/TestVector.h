@@ -4,7 +4,7 @@
 // www.helleboreconsulting.com
 
 #include <celero/Export.h>
-#include "celero/internal/pimpl.h"
+#include "celero/internal/celero-pimpl.h"
 #include <functional>
 
 namespace celero
