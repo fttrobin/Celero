@@ -1,7 +1,6 @@
 #include <celero/BenchmarkInfo.h>
 #include <celero/TestFixture.h>
 #include <celero/Factory.h>
-#include <celero/PimplImpl.h>
 #include <celero/TestVector.h>
 #include <celero/Utilities.h>
 

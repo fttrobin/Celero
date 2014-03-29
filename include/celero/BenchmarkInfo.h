@@ -1,12 +1,10 @@
 #ifndef H_CELERO_BENCHMARKINFO_H
 #define H_CELERO_BENCHMARKINFO_H
 
-// www.helleboreconsulting.com
-
 #include <string>
 
 #include <celero/Export.h>
-#include <celero/Pimpl.h>
+#include "celero/internal/pimpl.h"
 
 namespace celero
 {
@@ -184,7 +182,7 @@ namespace celero
 			///
 			/// \brief	Pimpl Idiom
 			///
-			Pimpl<Impl> pimpl;	
+            internal::pimpl<Impl> pimpl;	
 	};
 }
 
