@@ -1,4 +1,4 @@
-#include <celero/JUnit.h>
+#include "celero/internal/celero-junit.h"
 #include "celero/celero-utilities.h"
 #include "celero/celero-benchmark_info.h"
 #include "celero/internal/celero-timer.h"

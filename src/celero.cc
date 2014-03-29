@@ -6,7 +6,7 @@
 #include <celero/Executor.h>
 #include "celero/internal/celero-print.h"
 #include "celero/internal/celero-result_table.h"
-#include <celero/JUnit.h>
+#include "celero/internal/celero-junit.h"
 
 #include <iostream>
 #include <algorithm>
