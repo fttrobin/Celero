@@ -3,7 +3,7 @@
 #include "celero/celero-benchmark_info.h"
 #include "celero/internal/celero-test_vector.h"
 #include "celero/celero-utilities.h"
-#include <celero/Executor.h>
+#include "celero/internal/celero-executor.h"
 #include "celero/internal/celero-print.h"
 #include "celero/internal/celero-result_table.h"
 #include "celero/internal/celero-junit.h"
