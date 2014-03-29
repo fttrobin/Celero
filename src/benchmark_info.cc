@@ -1,5 +1,5 @@
 #include <celero/BenchmarkInfo.h>
-#include <celero/TestFixture.h>
+#include "celero/celero-test_fixture.h"
 #include <celero/Factory.h>
 #include <celero/TestVector.h>
 #include "celero/celero-utilities.h"

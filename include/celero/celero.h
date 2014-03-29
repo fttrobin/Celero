@@ -41,7 +41,7 @@
 #endif
 
 #include <celero/BenchmarkInfo.h>
-#include <celero/TestFixture.h>
+#include "celero/celero-test_fixture.h"
 #include <celero/GenericFactory.h>
 #include "celero/celero-utilities.h"
 
