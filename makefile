@@ -5,30 +5,36 @@
 $(VERBOSE).SILENT:
 
 CD=@ cd
-MKDIR=@ mkdir -p
+MKDIR=@  mkdir -p
 MAKE=make
 CMAKE=cmake
 
 BUILD_DIR=build
 TEST_TIMESTAMP=$(BUILD_DIR)/.test_timestamp
 
-.PHONY : all lib test clean
+.PHONY : all lib build_test test clean
 .DEFAULT_GOAL := all
 
-all: $(BUILD_DIR)
+cmake: | $(BUILD_DIR)
 	$(CD) $(BUILD_DIR) && $(CMAKE) -DCELERO_BUILD_TESTS=ON ..
+
+all: cmake
 	$(CD) $(BUILD_DIR) && $(MAKE) all
 
-lib: $(BUILD_DIR)
-	$(CD) $(BUILD_DIR) && $(CMAKE) ..
+lib: cmake
 	$(CD) $(BUILD_DIR) && $(MAKE) celero && $(MAKE) celero_main
 
-test: $(BUILD_DIR) $(TEST_TIMESTAMP)
-	$(CD) $(BUILD_DIR) && $(CMAKE) -DCELERO_BUILD_TESTS=ON ..
+build_test: cmake
+	$(CD) $(BUILD_DIR) && $(MAKE) celero-tests
+
+test: build_test $(TEST_TIMESTAMP)
 	$(CD) $(BUILD_DIR) && $(MAKE) celero-tests-run
 
-clean: $(BUILD_DIR)
+clean:
 	$(CD) $(BUILD_DIR) && $(MAKE) clean
+
+celero%: cmake
+	$(CD) $(BUILD_DIR); $(MAKE) $@
 
 $(TEST_TIMESTAMP): | $(BUILD_DIR)
 	echo $$RANDOM$$RANDOM$$RANDOM > $@
