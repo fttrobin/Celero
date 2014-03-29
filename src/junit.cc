@@ -1,5 +1,4 @@
 #include <celero/JUnit.h>
-#include <celero/PimplImpl.h>
 #include <celero/Utilities.h>
 #include <celero/BenchmarkInfo.h>
 #include <celero/Timer.h>

@@ -3,7 +3,7 @@
 
 // www.helleboreconsulting.com
 
-#include <celero/Pimpl.h>
+#include "celero/internal/pimpl.h"
 #include <string>
 
 namespace celero
@@ -57,7 +57,7 @@ namespace celero
 			///
 			/// \brief	Pimpl Idiom
 			///
-			Pimpl<Impl> pimpl;	
+            internal::pimpl<Impl> pimpl;	
 	};
 }
 

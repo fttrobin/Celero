@@ -1,5 +1,4 @@
 #include <celero/TestVector.h>
-#include <celero/PimplImpl.h>
 #include <celero/BenchmarkInfo.h>
 
 #include <mutex>

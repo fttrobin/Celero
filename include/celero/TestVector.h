@@ -4,7 +4,7 @@
 // www.helleboreconsulting.com
 
 #include <celero/Export.h>
-#include <celero/Pimpl.h>
+#include "celero/internal/pimpl.h"
 #include <functional>
 
 namespace celero
@@ -48,7 +48,7 @@ namespace celero
 			///
 			/// \brief	Pimpl Idiom
 			///
-			Pimpl<Impl> pimpl;		
+            internal::pimpl<Impl> pimpl;		
 	};
 }
 

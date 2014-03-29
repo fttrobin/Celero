@@ -1,5 +1,4 @@
 #include <celero/ResultTable.h>
-#include <celero/PimplImpl.h>
 
 #include <assert.h>
 
