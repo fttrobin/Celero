@@ -1,4 +1,4 @@
-#include <celero/ResultTable.h>
+#include "celero/internal/celero-result_table.h"
 
 #include <assert.h>
 
