@@ -24,12 +24,27 @@ endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-file(GLOB_RECURSE CELERO_LIBRARY_SOURCES
+file(GLOB_RECURSE CELERO_LIBRARY_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/include/celero/*.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
+)
+set(CELERO_LIBRARY_SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/benchmark_info.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/celero.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/executor.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/junit.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/print.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/result_table.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/test_fixture.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/test_vector.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/timer.cc
+)
+set(CELERO_MAIN_LIBRARY_SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/celero_main.cc
 )
 
-add_library(celero ${CELERO_LIBRARY_SOURCES})
+add_library(celero ${CELERO_LIBRARY_HEADERS} ${CELERO_LIBRARY_SOURCES})
+add_library(celero_main STATIC ${CELERO_MAIN_LIBRARY_SOURCES})
+target_link_libraries(celero_main celero)
 
 if(CELERO_BUILD_TESTS)
     include_directories(

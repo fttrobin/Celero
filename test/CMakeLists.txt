@@ -11,3 +11,14 @@ target_link_libraries(celero-tests
     gtest_main
     pthread
 )
+
+add_custom_command(TARGET celero-tests POST_BUILD
+    COMMAND ${CMAKE_CURRENT_BINARY_DIR}/celero-tests
+    COMMENT "Executing unit tests..."
+)
+
+add_custom_target(celero-tests-run
+    COMMAND ${CMAKE_CURRENT_BINARY_DIR}/celero-tests
+    DEPENDS celero-tests
+    COMMENT "Executing unit tests..."
+)
