@@ -1,4 +1,4 @@
-#include <celero/Celero.h>
+#include <celero/celero.h>
 
 #include <thread>
 #include <chrono>

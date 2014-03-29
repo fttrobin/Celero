@@ -11,7 +11,7 @@
 // limitations under the License.
 
 #include <cstdio>
-#include "celero/Celero.h"
+#include "celero/celero.h"
 
 CELERO_EXPORT int main(int argc, char** argv)
 {

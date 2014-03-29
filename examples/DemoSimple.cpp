@@ -1,4 +1,4 @@
-#include <celero/Celero.h>
+#include <celero/celero.h>
 
 #ifndef WIN32
 #include <cmath>

@@ -1,4 +1,4 @@
-#include <celero/Celero.h>
+#include <celero/celero.h>
 #include <celero/Console.h>
 #include <celero/BenchmarkInfo.h>
 #include <celero/TestVector.h>

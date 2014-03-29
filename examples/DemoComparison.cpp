@@ -1,6 +1,6 @@
 #include <random>
 
-#include <celero/Celero.h>
+#include <celero/celero.h>
 
 ///
 /// This is the main(int argc, char** argv) for the entire celero program.
