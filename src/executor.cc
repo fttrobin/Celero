@@ -1,5 +1,5 @@
 #include <celero/celero.h>
-#include <celero/Console.h>
+#include "celero/internal/celero-console.h"
 #include "celero/celero-benchmark_info.h"
 #include <celero/TestVector.h>
 #include "celero/celero-utilities.h"

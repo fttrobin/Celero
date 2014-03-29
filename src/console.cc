@@ -1,4 +1,4 @@
-#include <celero/Console.h>
+#include "celero/internal/celero-console.h"
 
 using namespace celero;
 
