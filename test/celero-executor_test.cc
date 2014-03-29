@@ -12,8 +12,12 @@
 //
 // Author: gracjan.olbinski@gmail.com (Gracjan Olbinski)
 
+#include <memory>
 #include <gtest/gtest.h>
 #include "celero/internal/celero-executor.h"
+
+#include "celero-factory_mock.h"
+#include "celero-benchmark_mock.h"
 #include "celero-benchmark_info_mock.h"
 
 namespace celero
@@ -23,12 +27,23 @@ namespace test
 
 struct CeleroExecutorShould : public ::testing::Test
 {
+    CeleroExecutorShould()
+    : benchmarkInfoMock(new celero::test::BenchmarkInfoMock())
+    , benchmarkMock(new celero::test::BenchmarkMock())
+    , factoryMock(new celero::test::FactoryMock())
+    {
+    }
+
 protected:
-    celero::test::BenchmarkInfoMock benchmarkInfoMock;
+    std::shared_ptr<celero::test::BenchmarkInfoMock> benchmarkInfoMock;
+    std::shared_ptr<celero::test::BenchmarkMock>     benchmarkMock;
+    std::shared_ptr<celero::test::FactoryMock>       factoryMock;
 };  // test fixture CeleroExecutorShould
 
 TEST_F(CeleroExecutorShould, succeed)
 {
+//    EXPECT_CALL(*benchmarkInfoMock, getFactory())
+//        .WillOnce(::testing::Return(factoryMock));
 }
 
 }  // namespace test

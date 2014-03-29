@@ -8,7 +8,7 @@
 
 namespace celero
 {
-	class TestFixture;
+	class IBenchmark;
 
 	///
 	/// \class Factory
@@ -37,7 +37,7 @@ namespace celero
 			///
 			/// \brief	Pure virtual function.
 			///
-			virtual std::shared_ptr<TestFixture> Create() = 0;
+			virtual std::shared_ptr<celero::IBenchmark> Create() = 0;
 	};
 }
 

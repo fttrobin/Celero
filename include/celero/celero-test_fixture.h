@@ -13,12 +13,25 @@
 
 namespace celero
 {
+
+class IBenchmark
+{
+public:
+    virtual ~IBenchmark() {}
+    virtual void SetUp() = 0;
+    virtual void SetUp(const int32_t problemSetValue) = 0;
+    virtual void TearDown() = 0;
+    virtual std::pair<uint64_t, int32_t> Run(const uint64_t calls, const size_t problemSetValueIndex) = 0;
+    virtual size_t getProblemSetSize() const = 0;
+    virtual int32_t getProblemSetValue(const size_t x) const = 0;
+};  // class IBenchmark
+
 	///
 	/// \class TestFixture
 	///
 	/// \author John Farrier
 	///
-	class CELERO_EXPORT TestFixture
+	class CELERO_EXPORT TestFixture : public IBenchmark
 	{
 		public:
 			///
@@ -51,17 +64,17 @@ namespace celero
 			///
 			/// \return Returns the number of microseconds the run took.
 			///
-			std::pair<uint64_t, int32_t> Run(const uint64_t calls, const size_t problemSetValueIndex);
+			std::pair<uint64_t, int32_t> Run(const uint64_t calls, const size_t problemSetValueIndex) final;
 
 			///
 			///
 			///
-			size_t getProblemSetSize() const;
+			size_t getProblemSetSize() const final;
 
 			///
 			///
 			///
-			int32_t getProblemSetValue(const size_t x) const;
+			int32_t getProblemSetValue(const size_t x) const final;
 
 		protected:
 			///

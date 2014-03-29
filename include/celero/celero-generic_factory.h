@@ -33,7 +33,7 @@ namespace celero
 			///
 			/// \brief	Overload the pure virtual base class function.
 			///
-			virtual std::shared_ptr<TestFixture> Create()
+			virtual std::shared_ptr<celero::IBenchmark> Create()
 			{
 				return std::make_shared<T>();
 			}
