@@ -4,7 +4,7 @@
 #include <celero/TestVector.h>
 #include "celero/celero-utilities.h"
 #include <celero/Executor.h>
-#include <celero/Print.h>
+#include "celero/internal/celero-print.h"
 #include <celero/ResultTable.h>
 #include <celero/JUnit.h>
 

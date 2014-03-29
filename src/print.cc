@@ -1,4 +1,4 @@
-#include <celero/Print.h>
+#include "celero/internal/celero-print.h"
 #include "celero/internal/celero-console.h"
 #include "celero/celero-benchmark_info.h"
 #include <celero/TestVector.h>
