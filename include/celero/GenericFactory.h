@@ -3,7 +3,7 @@
 
 // www.helleboreconsulting.com
 
-#include <celero/Factory.h>
+#include "celero/celero-factory.h"
 #include <celero/Export.h>
 
 namespace celero
