@@ -9,6 +9,7 @@ add_executable(celero-tests ${CELERO_TESTS_SOURCES})
 target_link_libraries(celero-tests
     gtest
     gtest_main
+    gmock
     pthread
 )
 
