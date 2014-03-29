@@ -28,15 +28,15 @@ file(GLOB_RECURSE CELERO_LIBRARY_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/include/celero/*.h
 )
 set(CELERO_LIBRARY_SOURCES
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/benchmark_info.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/celero-benchmark_info.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/celero.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/executor.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/junit.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/print.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/result_table.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/test_fixture.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/test_vector.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/timer.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/celero-executor.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/celero-junit.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/celero-print.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/celero-result_table.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/celero-test_fixture.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/celero-test_vector.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/celero-timer.cc
 )
 set(CELERO_MAIN_LIBRARY_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/celero_main.cc
