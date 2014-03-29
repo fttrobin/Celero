@@ -42,7 +42,7 @@
 
 #include "celero/celero-benchmark_info.h"
 #include "celero/celero-test_fixture.h"
-#include <celero/GenericFactory.h>
+#include "celero/celero-generic_factory.h"
 #include "celero/celero-utilities.h"
 
 namespace celero

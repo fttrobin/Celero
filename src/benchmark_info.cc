@@ -1,7 +1,7 @@
 #include "celero/celero-benchmark_info.h"
 #include "celero/celero-test_fixture.h"
 #include "celero/celero-factory.h"
-#include <celero/TestVector.h>
+#include "celero/internal/celero-test_vector.h"
 #include "celero/celero-utilities.h"
 
 #include <algorithm>

@@ -4,7 +4,7 @@
 // www.helleboreconsulting.com
 
 #include "celero/celero-factory.h"
-#include <celero/Export.h>
+#include "celero/internal/celero-export.h"
 
 namespace celero
 {

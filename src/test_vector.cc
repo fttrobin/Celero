@@ -1,4 +1,4 @@
-#include <celero/TestVector.h>
+#include "celero/internal/celero-test_vector.h"
 #include "celero/celero-benchmark_info.h"
 
 #include <mutex>

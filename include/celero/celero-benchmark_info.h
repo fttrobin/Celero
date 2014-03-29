@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include <celero/Export.h>
+#include "celero/internal/celero-export.h"
 #include "celero/internal/celero-pimpl.h"
 
 namespace celero

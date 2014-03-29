@@ -7,7 +7,7 @@
 #include <stdint.h>
 
 #include <celero/Timer.h>
-#include <celero/Export.h>
+#include "celero/internal/celero-export.h"
 
 #include <vector>
 
